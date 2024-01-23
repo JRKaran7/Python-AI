@@ -45,7 +45,7 @@ print('\n')
 regressor = LinearRegression()
 regressor.fit(X_train, Y_train)
 y_pred = regressor.predict(X_test)
-print('Average Strike Rate Predictions made using testing independent variables: - ')
+print('Average Strike Rate Predictions made using testing set data of independent variables from dataset: - ')
 print(y_pred)
 print('R2 Score of the predictions: - ', r2_score(Y_test, y_pred))
 
@@ -59,7 +59,7 @@ plt.title(st)
 plt.show()
 
 runrate = dataset.iloc[:, -1]
-st1 = 'Run rate of ' + country
+st1 = 'Average Strike Rate of ' + country
 plt.xlabel('Years')
 plt.ylabel('Runrate')
 x = []
@@ -75,6 +75,7 @@ c = years
 a, b = np.polyfit(x, Y, 1)
 plt.scatter(x, Y)
 plt.plot(x, a * x + b)
+plt.title(st1)
 plt.xticks(x, years, rotation=45)
 plt.show()
 
